@@ -1,0 +1,12 @@
+Ehcache-Hibernate
+
+Aplicação de exemplo da utilização do cache de segundo nível EhCache com o Hibernate 4.1.5.Final (JPA 2.0), JSF 2.0 (Mojarra), Spring 3.1.1, MySQL 5, AspectJ, Jetty 8 e Maven 3.
+
+Execução  
+
+Para executar a aplicação crie um novo Maven Build com o seguinte goal:
+
+clean package jetty:run
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+<body> 
+	<h:dataTable value="#{livroBean.livros}" var="livro">
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="ID" />
+			</f:facet>
+			<h:outputText value="#{livro.id}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Titulo" />
+			</f:facet>
+			<h:outputText value="#{livro.titulo}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Autor" />
+			</f:facet>
+			<h:outputText value="#{livro.autor}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Editora" />
+			</f:facet>
+			<h:outputText value="#{livro.editora}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="Edição" />
+			</f:facet>
+			<h:outputText value="#{livro.edicao}" />
+		</h:column>
+		<h:column>
+			<f:facet name="header">
+				<h:outputText value="ISBN" />
+			</f:facet>
+			<h:outputText value="#{livro.isbn}" />
+		</h:column>		
+	</h:dataTable>
+</body> 
+</html>

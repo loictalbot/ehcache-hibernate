@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<!-- Define unidade de persistencia como uma unidade RESOURCE LOCAL -->
+	<persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+		<!-- JPA Provider -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		
+		<!-- Non JTA Data Source -->
+		<non-jta-data-source>jdbc/MySQLDS</non-jta-data-source>
+
+		<!-- Não exclui classes nao declaradas -->
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+		<!-- Configuracao do Hibernate -->
+		<properties>
+			<!-- Detecção de metadados do Hibernate -->
+			<property name="hibernate.archive.autodetection" value="class, hbm"/>		
+		
+			<!-- Exibe SQL gerado -->
+			<property name="hibernate.show_sql" value="true" />
+			
+			<!-- Formata saída do SQL gerado -->
+			<property name="hibernate.format_sql" value="true" />
+			
+			<!-- HBM 2 DDL -->
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			
+			<!-- Usa comentários no SQL -->
+			<property name="hibernate.use_sql_comments" value="true" />
+         
+         	<!-- Usa cache para Query -->
+			<property name="hibernate.cache.use_query_cache" value="true"/>
+         
+         	<!-- Usa cache de segundo nivel -->
+			<property name="hibernate.cache.use_second_level_cache" value="true" />
+		
+			<!-- Gera estatisticas -->
+			<property name="hibernate.generate_statistics" value="true"/>
+			
+			<!-- Define Region Factory Class do EhCache -->
+			<property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory" />         
+         
+			<!-- MySQL Dialect -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+		</properties>
+	</persistence-unit>
+
+</persistence>
